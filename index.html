@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101312">
+  <meta name="theme-color" content="#0a101a">
   <meta name="description" content="Resume and portfolio of Anshuman Mahana, a BTech CSE (AI & ML) student and Research & Development contributor at Vertex HaleX.">
   <title>Anshuman Mahana — Resume</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #101312;
-      --surface: #181d1b;
-      --surface-raised: #1e2522;
-      --text: #f0f3ed;
-      --muted: #9da8a0;
-      --line: rgba(235, 244, 237, .12);
-      --accent: #c6f36b;
-      --accent-ink: #151a11;
-      --glow: rgba(198, 243, 107, .13);
-      --shadow: 0 24px 80px rgba(0, 0, 0, .28);
+      --bg: #0a101a;
+      --surface: #101b2a;
+      --surface-raised: #17263a;
+      --text: #edf5ff;
+      --muted: #9aacc3;
+      --line: rgba(199, 222, 255, .13);
+      --accent: #6bb9ff;
+      --accent-ink: #071525;
+      --glow: rgba(75, 157, 255, .18);
+      --shadow: 0 24px 80px rgba(0, 0, 0, .32);
       --radius: 22px;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       scroll-behavior: smooth;
@@ -27,16 +27,16 @@
 
     :root[data-theme="light"] {
       color-scheme: light;
-      --bg: #f4f6ef;
+      --bg: #f1f6ff;
       --surface: #fff;
-      --surface-raised: #edf1e8;
-      --text: #19201b;
-      --muted: #657067;
-      --line: rgba(25, 32, 27, .12);
-      --accent: #6d9d18;
+      --surface-raised: #e8f1ff;
+      --text: #152239;
+      --muted: #5e708a;
+      --line: rgba(27, 73, 132, .14);
+      --accent: #1769d2;
       --accent-ink: #fff;
-      --glow: rgba(109, 157, 24, .12);
-      --shadow: 0 24px 80px rgba(30, 45, 28, .09);
+      --glow: rgba(49, 126, 226, .13);
+      --shadow: 0 24px 80px rgba(30, 66, 115, .1);
     }
 
     * { box-sizing: border-box; }
@@ -111,6 +111,43 @@
     h1 { max-width: 700px; margin: 18px 0 14px; font-size: clamp(2.8rem, 7vw, 5.4rem); line-height: .99; letter-spacing: -.075em; }
     h1 span { color: var(--accent); }
     .hero-copy > p { max-width: 590px; margin: 0; color: var(--muted); font-size: clamp(1rem, 2vw, 1.15rem); }
+    .am-animation {
+      position: relative; isolation: isolate; display: inline-flex; align-items: center; gap: .02em;
+      margin: 23px 0 0 8px; padding: 10px 24px;
+      color: var(--text); font-size: clamp(3.2rem, 7vw, 5.4rem); font-weight: 900;
+      line-height: .9; letter-spacing: -.12em; perspective: 600px;
+    }
+    .am-animation::before, .am-animation::after {
+      content: ""; position: absolute; z-index: -1; inset: 3px 4px;
+      border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+      border-radius: 50%; pointer-events: none;
+    }
+    .am-animation::before {
+      transform: rotate(-15deg) scaleY(.48);
+      box-shadow: 0 0 18px var(--glow), inset 0 0 15px var(--glow);
+      animation: am-orbit 7s linear infinite;
+    }
+    .am-animation::after {
+      inset: -5px 10px; border-color: color-mix(in srgb, var(--accent) 22%, transparent);
+      transform: rotate(20deg) scaleY(.62); animation: am-orbit 11s linear infinite reverse;
+    }
+    .am-animation span {
+      display: inline-block; color: transparent;
+      background: linear-gradient(145deg, #f3fbff 8%, #8bd1ff 42%, #3789ff 76%, #a4d5ff);
+      background-clip: text; -webkit-background-clip: text;
+      text-shadow: 0 0 24px color-mix(in srgb, var(--accent) 45%, transparent);
+      animation: am-float 3.2s ease-in-out infinite, am-glow 2.8s ease-in-out infinite alternate;
+    }
+    .am-animation span:nth-child(2) { animation-delay: -.55s, -.9s; }
+    @keyframes am-orbit { to { rotate: 360deg; } }
+    @keyframes am-float {
+      0%, 100% { transform: translateY(0) rotateX(0); }
+      50% { transform: translateY(-8px) rotateX(8deg); }
+    }
+    @keyframes am-glow {
+      from { filter: brightness(.9); }
+      to { filter: brightness(1.3); }
+    }
     .hero-buttons { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 28px; }
     .button {
       display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: .55rem;
@@ -171,7 +208,7 @@
       .nav-links a { padding: 4px 0; }
       .menu-button { display: grid; }
       .hero { grid-template-columns: 1fr; min-height: 0; padding: 34px 26px; }
-      .hero-mark { position: absolute; width: 110px; right: 22px; top: 25px; opacity: .3; }
+      .hero-mark { position: absolute; width: 110px; right: 22px; top: 25px; opacity: .82; }
       h1 { max-width: 520px; padding-right: 35px; font-size: clamp(2.8rem, 12vw, 4.5rem); }
       .hero-copy > p { max-width: 480px; }
       .content-grid { grid-template-columns: 1fr; }
@@ -180,7 +217,7 @@
       .shell { width: calc(100% - 24px); }
       main { padding-top: 24px; }
       .hero { padding: 27px 20px; border-radius: 23px; }
-      .hero-mark { width: 80px; right: 12px; top: 30px; }
+      .hero-mark { width: 80px; right: 12px; top: 30px; opacity: .72; }
       .hero-buttons { gap: .6rem; }
       .button { padding-inline: .8rem; font-size: .83rem; }
       .card { padding: 21px 18px; }
@@ -191,7 +228,7 @@
       .reveal { opacity: 1; transform: none; }
     }
     @media print {
-      :root { color-scheme: light; --bg: #fff; --surface: #fff; --surface-raised: #f4f4f4; --text: #171717; --muted: #444; --line: #ddd; --accent: #527d0b; --accent-ink: #fff; --glow: transparent; --shadow: none; }
+      :root { color-scheme: light; --bg: #fff; --surface: #fff; --surface-raised: #f2f6fc; --text: #152239; --muted: #44546b; --line: #d7e1ef; --accent: #155cb1; --accent-ink: #fff; --glow: transparent; --shadow: none; }
       body { background: #fff; }
       .topbar, .hero-buttons, .nav-actions, footer { display: none !important; }
       main { padding: 0; }
@@ -247,6 +284,7 @@
         <span class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Student · Research &amp; Development</span>
         <h1 id="hero-title">Anshuman <span>Mahana</span></h1>
         <p>BTech student in Computer Science Engineering (AI &amp; ML) at CUTM, exploring ideas and building toward what’s next.</p>
+        <div class="am-animation" role="img" aria-label="Animated AM monogram"><span aria-hidden="true">A</span><span aria-hidden="true">M</span></div>
         <div class="hero-buttons">
           <a class="button primary" href="https://vertexhalex.com" target="_blank" rel="noopener noreferrer">
             Explore Vertex HaleX
